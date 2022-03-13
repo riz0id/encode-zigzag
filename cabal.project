@@ -1,0 +1,10 @@
+packages: encode-zigzag.cabal
+jobs: $ncpus
+
+package *
+  optimization: 2
+
+  haddock-html:             true
+  haddock-hoogle:           true
+  haddock-hyperlink-source: true
+  haddock-quickjump:        true
