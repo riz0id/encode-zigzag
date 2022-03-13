@@ -1,3 +1,5 @@
+{-# LANGUAGE MagicHash #-}
+
 -- | Zigzag encoding of signed integers.
 --
 -- @since 1.0.0
@@ -9,10 +11,10 @@ module Data.Encode.ZigZag
   )
 where
 
-import GHC.Int (Int64 (I64#), Int32 (I32#), Int16 (I16#), Int8 (I8#), Int (I#))
+import GHC.Int (Int (I#), Int16 (I16#), Int32 (I32#), Int64 (I64#), Int8 (I8#))
 import GHC.Word (Word (W#))
 
-import Data.Encode.ZigZag.Prim qualified as Prim
+import qualified Data.Encode.ZigZag.Prim as Prim
 
 -- -----------------------------------------------------------------------------
 

@@ -1,9 +1,20 @@
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE MagicHash #-}
 
 -- | Fast Zigzag encoding and decoding defined via primitive GHC PrimOps.
 --
 -- @since 1.0.0
-module Data.Encode.ZigZag.Prim where
+module Data.Encode.ZigZag.Prim
+  ( toZigZagI#,
+    fromZigZagI#,
+    toZigZagI8#,
+    fromZigZagI8#,
+    toZigZagI16#,
+    fromZigZagI16#,
+    toZigZagI32#,
+    fromZigZagI32#,
+  )
+where
 
 import qualified GHC.Exts as GHC
 import GHC.Int (uncheckedIShiftRA64#)
@@ -17,14 +28,12 @@ import GHC.Exts
     Word#,
     and#,
     int16ToInt#,
+    int2Word#,
+    int32ToInt#,
     int8ToInt#,
     intToInt16#,
-    intToInt8#,
-    int8ToInt#,
-    int16ToInt#,
-    int32ToInt#,
-    int2Word#,
     intToInt32#,
+    intToInt8#,
     not#,
     plusWord#,
     xor#,
